@@ -1,0 +1,22 @@
+﻿@page
+@model StajyerBlog.Web.UI.Pages.LoginModel
+@{
+    ViewData["Title"] = "Kullanıcı Girişi";
+}
+
+@{
+    if (Model.ErrorMessage != null)
+    {
+        <div style="color:red">@Model.ErrorMessage</div>
+    }
+}
+<div>
+    <form asp-action="/Login" method="post">
+        <label>E-Posta</label>
+        <input type="email" asp-for="Email" />
+        <label>Şifre</label>
+        <input type="password" asp-for="Password" />
+
+        <button type="submit">Giriş yap</button>
+    </form>
+</div>
